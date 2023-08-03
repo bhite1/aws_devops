@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS DevOps Quiz</title>
+</head>
+<body>
+    <h1>Question <%= question %></h1>
+    <form method="POST">
+        <% for(let i = 0; i < choices.length; i++) { %>
+            <input type="radio" name="answer" value="<%= choices[i] %>" required> <%= choices[i] %> <br>
+        <% } %>
+        <br>
+        <button type="submit">Next</button>
+    </form>
+    <h3>Score: <%= score %></h3>
+</body>
+</html>
