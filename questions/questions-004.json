@@ -1,0 +1,170 @@
+[
+    {
+        "question": "In modern DevOps practices on AWS, maintaining infrastructure consistency while ensuring rapid provisioning becomes crucial. If your focus is on using a managed service that offers infrastructure as code (IaC) capabilities and employs familiar programming languages to define and provision AWS resources, which AWS service would be your prime choice?",
+        "choices": ["A. AWS CloudFormation", "B. AWS CDK (Cloud Development Kit)", "C. AWS OpsWorks", "D. AWS Elastic Beanstalk"],
+        "answer": "B. AWS CDK (Cloud Development Kit)",
+        "explanation": "AWS CDK (Cloud Development Kit) is an open-source software development framework that uses familiar programming languages to model and provision your cloud application resources, providing IaC capabilities."
+    },
+    {
+        "question": "With a deepened commitment to DevOps, integrating development and operations necessitates tools that facilitate collaboration. When considering a service on AWS to manage code repositories, track and manage changes to your code, and store metadata about versions and branches, which service would you predominantly select?",
+        "choices": ["A. AWS CodeStar", "B. AWS CodeCommit", "C. AWS CodeBuild", "D. AWS CodeDeploy"],
+        "answer": "B. AWS CodeCommit",
+        "explanation": "AWS CodeCommit is a fully managed source control service that hosts Git repositories, tracks and manages changes to your code, and stores versioning and branching metadata."
+    },
+    {
+        "question": "Given the multifaceted nature of DevOps workflows, ensuring that the resources being provisioned are in compliance with established organizational blueprints is vital. For evaluating AWS resources against desired configurations on AWS and providing a compliance audit, which AWS service should you prioritize?",
+        "choices": ["A. AWS CloudTrail", "B. AWS Config", "C. AWS Shield", "D. Amazon Inspector"],
+        "answer": "B. AWS Config",
+        "explanation": "AWS Config provides a detailed view of the configurations of AWS resources in your AWS account and continuously evaluates these resources against desired configurations, making it invaluable for compliance audits."
+    },
+    {
+        "question": "Continuous integration and continuous delivery (CI/CD) stand central to successful DevOps strategies. If your intent is to compile source code, run tests, and produce ready-to-deploy software packages on AWS without the need to manage build servers, which AWS service should you prominently integrate?",
+        "choices": ["A. AWS CodePipeline", "B. AWS CodeStar", "C. AWS CodeBuild", "D. AWS CodeDeploy"],
+        "answer": "C. AWS CodeBuild",
+        "explanation": "AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages, without the need for provisioning and managing individual build servers."
+    },
+    {
+        "question": "In the realm of DevOps on AWS, understanding how AWS Management Console or AWS SDKs and command-line tools are accessed and used becomes paramount for security. If you aim to capture detailed event logs of actions taken within your AWS environment, which AWS service should be an integral part of your auditing toolkit?",
+        "choices": ["A. AWS Config", "B. Amazon Macie", "C. AWS CloudTrail", "D. Amazon GuardDuty"],
+        "answer": "C. AWS CloudTrail",
+        "explanation": "AWS CloudTrail is a service that captures detailed event logs for actions taken within your AWS environment, providing visibility into user activity and resource utilization."
+    },
+    {
+        "question": "When you're immersed in AWS DevOps, understanding the strategies to efficiently deploy serverless applications becomes pivotal. To manage and deploy serverless applications on AWS, encapsulating AWS resources such as Lambda and API Gateway, which AWS service would stand as your preferred choice?",
+        "choices": ["A. AWS Lambda", "B. AWS SAM (Serverless Application Model)", "C. AWS Step Functions", "D. AWS Batch"],
+        "answer": "B. AWS SAM (Serverless Application Model)",
+        "explanation": "AWS SAM (Serverless Application Model) is an open-source framework used for building serverless applications. It extends AWS CloudFormation to provide a simplified syntax for defining serverless resources, making it an optimal choice for managing and deploying serverless applications on AWS."
+    },
+    {
+        "question": "In a sophisticated DevOps ecosystem on AWS, ensuring automated application deployments while maintaining the ability to roll back any version becomes indispensable. Which AWS service is tailor-made for automating code deployments to various compute services, including Lambda and EC2, without downtime?",
+        "choices": ["A. AWS CodeCommit", "B. AWS CodeBuild", "C. AWS CodeDeploy", "D. AWS CodeStar"],
+        "answer": "C. AWS CodeDeploy",
+        "explanation": "AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as AWS Lambda and Amazon EC2, ensuring zero downtime during application deployment."
+    },
+    {
+        "question": "Given the multifaceted operational requirements in DevOps, monitoring, alerting, and responding to changes in AWS resource states becomes paramount. Which AWS service facilitates the creation of a collection of rules that define a desired AWS resource state and then triggers actions when that state changes?",
+        "choices": ["A. Amazon CloudWatch", "B. AWS CloudTrail", "C. AWS Config Rules", "D. Amazon GuardDuty"],
+        "answer": "C. AWS Config Rules",
+        "explanation": "AWS Config Rules enables you to create a collection of rules that automatically check the configuration of AWS resources recorded by AWS Config, making it a core component for monitoring and responding to changes in AWS resource states."
+    },
+    {
+        "question": "For contemporary DevOps practices on AWS, reducing the time to detect and respond to production software errors is imperative. If you desire to collect, monitor, and analyze logs and metrics from your applications, infrastructure, and services in a unified manner, which AWS service should be your cornerstone?",
+        "choices": ["A. Amazon CloudWatch", "B. AWS X-Ray", "C. Amazon QuickSight", "D. AWS CloudTrail"],
+        "answer": "A. Amazon CloudWatch",
+        "explanation": "Amazon CloudWatch provides actionable insights to monitor applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health, making it central for comprehensive monitoring."
+    },
+    {
+        "question": "In the age of intricate DevOps workflows, securing and managing secrets used in your applications without hardcoding them becomes critical. If you're concentrating on a service to rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle on AWS, which service would be your prime focus?",
+        "choices": ["A. AWS Secrets Manager", "B. Amazon S3", "C. AWS Key Management Service", "D. AWS Single Sign-On"],
+        "answer": "A. AWS Secrets Manager",
+        "explanation": "AWS Secrets Manager helps you protect access to your applications, services, and IT resources without the upfront investment and on-going maintenance costs of operating your own infrastructure, making it vital for managing secrets in AWS DevOps practices."
+    },
+    {
+        "question": "In advanced AWS DevOps scenarios, leveraging containers becomes crucial for app isolation and portability. If your intention is to orchestrate and manage Docker containers on AWS without installing and operating your own container orchestration software, which service is apt?",
+        "choices": ["A. Amazon EC2", "B. AWS Batch", "C. AWS Lambda", "D. Amazon ECS"],
+        "answer": "D. Amazon ECS",
+        "explanation": "Amazon ECS (Elastic Container Service) is a fully managed container management service that makes it easy to run, stop, and manage Docker containers on a cluster. It abstracts the orchestration part, making it ideal for container management on AWS."
+    },
+    {
+        "question": "Ensuring high availability in a DevOps workflow is paramount. When considering a service to distribute incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones, which AWS service should be primary?",
+        "choices": ["A. Amazon API Gateway", "B. Amazon CloudFront", "C. AWS Global Accelerator", "D. Amazon ELB"],
+        "answer": "D. Amazon ELB",
+        "explanation": "Amazon ELB (Elastic Load Balancing) automatically distributes incoming application traffic across multiple targets, ensuring high availability and fault tolerance in your applications."
+    },
+    {
+        "question": "For rigorous DevOps professionals, understanding the underpinnings of application behavior and tracing requests from start to end is imperative. Which AWS service offers insights into the behavior of your applications, helping you understand how they are performing and where bottlenecks are occurring?",
+        "choices": ["A. AWS X-Ray", "B. Amazon CloudWatch Logs", "C. AWS CloudTrail", "D. AWS AppConfig"],
+        "answer": "A. AWS X-Ray",
+        "explanation": "AWS X-Ray provides insights into the behavior of your applications, helping understand how they are performing and where bottlenecks can occur, making it essential for deep application analysis and tracing."
+    },
+    {
+        "question": "In modern DevOps practices on AWS, automating software release processes to deploy updates consistently across environments is critical. Which AWS service is designed to automate your release pipelines for fast and reliable application and infrastructure updates?",
+        "choices": ["A. AWS CodeCommit", "B. AWS CodePipeline", "C. AWS CodeBuild", "D. AWS Lambda"],
+        "answer": "B. AWS CodePipeline",
+        "explanation": "AWS CodePipeline is a fully managed continuous delivery service that automates the build, test, and deploy phases of your release process, ensuring consistent deployments across environments."
+    },
+    {
+        "question": "When diving deep into AWS DevOps, securing your application and infrastructure configurations is pivotal. Which AWS service enables you to quickly leverage AWS best practices by defining guardrails for your AWS environments, ensuring compliance and security?",
+        "choices": ["A. AWS Organizations", "B. AWS Control Tower", "C. AWS Shield", "D. Amazon Macie"],
+        "answer": "B. AWS Control Tower",
+        "explanation": "AWS Control Tower provides the easiest way to set up and govern a new, secure, multi-account AWS environment based on best practices, ensuring compliance and security at scale."
+    },
+    {
+        "question": "In an intricate AWS DevOps environment, understanding the dependencies in your microservices architectures and spotting performance bottlenecks becomes crucial. Which AWS service provides application-centric views, helping visualize and analyze application dependencies, bottlenecks, and performance metrics?",
+        "choices": ["A. Amazon CloudWatch", "B. AWS App Mesh", "C. AWS CloudMap", "D. Amazon Inspector"],
+        "answer": "B. AWS App Mesh",
+        "explanation": "AWS App Mesh is a service mesh that provides application-level networking to make it easy for your services to communicate with each other across multiple types of compute infrastructure, assisting in visualizing and analyzing microservices architectures."
+    },
+    {
+        "question": "In a complex AWS DevOps environment, maintaining code quality is imperative. If your aim is to automate code reviews, identifying coding standards deviations and pinpointing security vulnerabilities in your codebase, which AWS service should be your primary selection?",
+        "choices": ["A. AWS CodeCommit", "B. AWS CodeStar", "C. AWS CodeBuild", "D. AWS CodeGuru"],
+        "answer": "D. AWS CodeGuru",
+        "explanation": "AWS CodeGuru is a machine learning-based service built to automate code reviews, identify the most expensive lines of code, and uncover critical issues, making it the right choice for maintaining high code quality."
+    },
+    {
+        "question": "When seeking optimal AWS DevOps strategies, enabling fast, automated, and secure data synchronization between on-premises and AWS or between multiple AWS services is key. Which AWS service should be utilized for this kind of data synchronization?",
+        "choices": ["A. AWS DataSync", "B. AWS DMS (Database Migration Service)", "C. AWS Glue", "D. AWS Transfer Family"],
+        "answer": "A. AWS DataSync",
+        "explanation": "AWS DataSync is a data transfer service that makes it easy to automate moving data between on-premises storage and Amazon S3, Amazon EFS, or Amazon FSx for Windows File Server."
+    },
+    {
+        "question": "For those deeply embedded in AWS DevOps practices, auditing API activity and ensuring operational transparency is crucial. Which AWS service should be chosen to enable governance, compliance, and operational and risk auditing of your AWS account?",
+        "choices": ["A. Amazon CloudWatch", "B. AWS CloudTrail", "C. AWS Config", "D. AWS Inspector"],
+        "answer": "B. AWS CloudTrail",
+        "explanation": "AWS CloudTrail records AWS API calls, delivering log files to you for audit and review. It provides event history, making it essential for governance, compliance, and operational transparency."
+    },
+    {
+        "question": "When navigating the AWS DevOps landscape, ensuring that AWS resources conform to organizational standards and best practices becomes paramount. Which AWS service would you primarily engage to assess, audit, and evaluate configurations of your AWS resources?",
+        "choices": ["A. AWS Config", "B. AWS Trusted Advisor", "C. AWS Shield", "D. AWS Macie"],
+        "answer": "A. AWS Config",
+        "explanation": "AWS Config provides a detailed inventory of AWS resources and configuration, continuously monitors and records configuration changes, and allows you to automate evaluating recorded configurations against desired configurations."
+    },
+    {
+        "question": "In a sophisticated AWS DevOps workflow, ensuring a continuous delivery of features while maintaining application stability is a priority. When focusing on a service to experiment on application changes in a controlled way, which AWS tool facilitates this process?",
+        "choices": ["A. AWS CodeDeploy", "B. AWS AppConfig", "C. AWS Elastic Beanstalk", "D. AWS CodeStar"],
+        "answer": "B. AWS AppConfig",
+        "explanation": "AWS AppConfig is used to create, manage, and quickly deploy application configurations. It allows you to validate the configuration data to ensure it's right, and then deploy them to your application, ensuring a controlled experimentation and reduced failures."
+    },
+    {
+        "question": "In the realm of AWS DevOps, efficiently managing infrastructure as code, especially for large-scale server fleets, becomes pivotal. Which AWS service offers a managed instance configuration experience, allowing you to automate common tasks such as patch management and software installation?",
+        "choices": ["A. AWS OpsWorks", "B. AWS Systems Manager", "C. Amazon EC2 Image Builder", "D. AWS Elastic Beanstalk"],
+        "answer": "B. AWS Systems Manager",
+        "explanation": "AWS Systems Manager provides visibility and control of your infrastructure on AWS. It aids in operational tasks among AWS resources, such as patch management, state management, and more, making it central for managing infrastructure at scale."
+    },
+    {
+        "question": "When establishing a robust AWS DevOps ecosystem, enforcing a consistent set of policies for multiple AWS accounts becomes indispensable. If you're looking to centrally manage policies across multiple AWS accounts without requiring custom scripts or manual processes, which AWS service would be most beneficial?",
+        "choices": ["A. AWS Control Tower", "B. AWS Organizations", "C. AWS Single Sign-On", "D. AWS Config"],
+        "answer": "B. AWS Organizations",
+        "explanation": "AWS Organizations lets you consolidate multiple AWS accounts into an organization that you create and centrally manage, providing policy-based management for multiple AWS accounts."
+    },
+    {
+        "question": "In an advanced AWS DevOps setup, managing secrets and protecting sensitive information is critical. Which AWS service would be best suited for creating and managing secrets, rotating, and retrieving database credentials, API keys, and other secrets throughout their lifecycle?",
+        "choices": ["A. AWS Secrets Manager", "B. AWS Key Management Service", "C. AWS Shield", "D. AWS Certificate Manager"],
+        "answer": "A. AWS Secrets Manager",
+        "explanation": "AWS Secrets Manager helps manage sensitive information such as passwords, database credentials, and API keys, making it easier to rotate, manage, and retrieve these secrets throughout their lifecycle."
+    },
+    {
+        "question": "For AWS DevOps professionals aspiring to maintain application and infrastructure security, assessing the environment for potential vulnerabilities is crucial. Which AWS service offers automated security assessment to help improve the security and compliance of applications deployed on AWS?",
+        "choices": ["A. Amazon GuardDuty", "B. Amazon Macie", "C. AWS WAF", "D. Amazon Inspector"],
+        "answer": "D. Amazon Inspector",
+        "explanation": "Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS by identifying potential security vulnerabilities or deviations."
+    },
+    {
+        "question": "In a dynamic AWS DevOps context, ensuring resilient and scalable DNS routing is paramount for application accessibility. Which AWS service is designed to translate friendly domain names like www.example.com into IP addresses, which are used for routing traffic to the application?",
+        "choices": ["A. AWS Global Accelerator", "B. Amazon VPC Endpoint", "C. Amazon Route 53", "D. AWS Direct Connect"],
+        "answer": "C. Amazon Route 53",
+        "explanation": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service, designed to route end users to Internet applications by translating domain names into numeric IP addresses."
+    },
+    {
+        "question": "As part of a mature AWS DevOps strategy, continuously optimizing the costs associated with resource usage is key. Which AWS service provides real-time guidance to provision resources and helps users maintain the optimal balance of cost, performance, high availability, and security?",
+        "choices": ["A. AWS Budgets", "B. AWS Trusted Advisor", "C. AWS Cost Explorer", "D. AWS Resource Groups"],
+        "answer": "B. AWS Trusted Advisor",
+        "explanation": "AWS Trusted Advisor inspects your AWS environment and makes recommendations when opportunities exist to save money, boost performance, improve availability, or tighten security."
+    },
+    {
+        "question": "In the realm of AWS DevOps, automating code deployments for serverless applications becomes an integral process. Which AWS service provides a deployment experience for serverless applications, allowing for the definition, deployment, and monitoring of applications described by AWS SAM or CloudFormation templates?",
+        "choices": ["A. AWS CodePipeline", "B. AWS CodeDeploy", "C. AWS Amplify", "D. AWS Serverless Application Model (SAM)"],
+        "answer": "D. AWS Serverless Application Model (SAM)",
+        "explanation": "The AWS Serverless Application Model (SAM) is an open-source framework for building serverless applications. It provides shorthand syntax to express functions, APIs, databases, and event source mappings, simplifying the deployment of serverless applications."
+    }
+]
