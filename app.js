@@ -13,6 +13,13 @@ let userAnswers = [];  // To store user's selected answers
 let currentQuestionIndex = 0;
 let userScore = 0;
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];  // swap elements
+    }
+}
+
 // Read all files in the 'questions' directory
 const questionsDir = path.join(__dirname, 'questions');
 fs.readdir(questionsDir, (err, files) => {
@@ -26,6 +33,24 @@ fs.readdir(questionsDir, (err, files) => {
             questions_data = questions_data.concat(parsedData);
         }
     });
+});
+
+// After reading all question files
+files.forEach(file => {
+    if (path.extname(file) === '.json') {
+        const filePath = path.join(questionsDir, file);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const parsedData = JSON.parse(fileContent);
+        questions_data = questions_data.concat(parsedData);
+    }
+});
+
+// Randomize the ordering of the questions
+shuffleArray(questions_data);
+
+// Randomize the ordering of the choices for each question
+questions_data.forEach(question => {
+    shuffleArray(question.choices);
 });
 
 app.get('/', (req, res) => {
