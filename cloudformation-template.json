@@ -1,0 +1,70 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Template to create a quiz application with custom security group.",
+  "Parameters": {
+    "LatestAmiId": {
+      "Type": "String",
+      "Default": "ami-08a52ddb321b32a8c"
+    },
+    "KeyName": {
+      "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
+      "Type": "AWS::EC2::KeyPair::KeyName",
+      "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
+    },
+    "InstanceType": {
+      "Description": "WebServer EC2 instance type",
+      "Default": "t2.micro",
+      "Type": "String",
+      "AllowedValues": ["t2.micro"]
+    }
+  },
+  "Resources": {
+    "WebServerSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Security group for the WebServer",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIp": "0.0.0.0/0"
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 3000,
+            "ToPort": 3000,
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
+      }
+    },
+    "WebServer": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": { "Ref": "LatestAmiId" },
+        "InstanceType": { "Ref": "InstanceType" },
+        "KeyName": { "Ref": "KeyName" },
+        "SecurityGroups": [{ "Ref": "WebServerSecurityGroup" }],
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Join": [
+              "",
+              [
+                "#!/bin/bash\n",
+                "yum install -y nodejs git\n",
+                "git clone https://github.com/bhite1/aws_devops.git /home/ec2-user/aws_devops\n",
+                "npm install express ejs body-parser --prefix /home/ec2-user/aws_devops\n",
+                "npm install pm2 -g\n",
+                "cd /home/ec2-user/aws_devops/\n",
+                "pm2 start app.js --name \"awsdevopsquiz\"\n",
+                "pm2 startup\n",
+                "pm2 save\n"
+              ]
+            ]
+          }
+        }
+      }
+    }
+  }
+}
