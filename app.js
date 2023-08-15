@@ -1,32 +1,29 @@
 const express = require('express');
-const app = express();
-const fs = require('fs');
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+const bodyParser = require('body-parser');
 
-let questionBank = JSON.parse(fs.readFileSync('question-bank.json', 'utf-8'));
-let currentQuestion = 0;
-let score = 0;
+const app = express();
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const questions_data = [
+    // ... [all your JSON data above]
+];
 
 app.get('/', (req, res) => {
-    res.render('index', { 
-        question: questionBank[currentQuestion].question, 
-        choices: questionBank[currentQuestion].choices, 
-        score: score 
-    });
+    res.render('quiz', { question: questions_data[0], message: '', explanation: '' });
 });
 
 app.post('/', (req, res) => {
-    let answer = req.body.answer;
-    if(answer === questionBank[currentQuestion].answer) {
-        score++;
-    }
-    currentQuestion++;
-    if(currentQuestion === questionBank.length) {
-        res.render('end', { score: score, total: questionBank.length });
-    } else {
-        res.redirect('/');
-    }
+    const selected_answer = req.body.answer;
+    const correct_answer = questions_data[0].answer;
+    
+    let message = selected_answer === correct_answer ? "Correct!" : "Incorrect!";
+    let explanation = questions_data[0].explanation;
+    
+    res.render('quiz', { question: questions_data[0], message: message, explanation: explanation });
 });
 
-app.listen(3000, () => console.log('Listening on port 3000'));
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server started on http://localhost:${PORT}`);
+});
