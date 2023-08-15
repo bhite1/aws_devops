@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h2><%= question.question %></h2>
+
+    <form action="/" method="post">
+        <% for(let choice of question.choices) { %>
+        <input type="radio" name="answer" value="<%= choice %>"><%= choice %><br>
+        <% } %>
+        <input type="submit" value="Submit Answer">
+    </form>
+
+    <p><%= message %></p>
+    <p><%= explanation %></p>
+
+</body>
+</html>
