@@ -45,13 +45,14 @@ app.post('/', (req, res) => {
 
     let message = '';
 
-    // Check if the answer is correct and hasn't been answered correctly before
-    if (req.body.submit === "Submit Answer" && selected_answer === correct_answer && !answeredCorrectly.includes(currentQuestionIndex)) {
-        message = "Correct!";
-        userScore += 1;
-        answeredCorrectly.push(currentQuestionIndex); // Mark this question as answered correctly
-    } else if (req.body.submit === "Submit Answer") {
-        message = "Incorrect!";
+    if (req.body.submit === "Submit Answer") {
+        if (selected_answer === correct_answer && !answeredCorrectly.includes(currentQuestionIndex)) {
+            message = "Correct!";
+            userScore += 1;
+            answeredCorrectly.push(currentQuestionIndex);
+        } else {
+            message = "Incorrect!";
+        }
     }
 
     let explanation = req.body.submit === "Submit Answer" ? questions_data[currentQuestionIndex].explanation : '';
@@ -60,9 +61,7 @@ app.post('/', (req, res) => {
         currentQuestionIndex = (currentQuestionIndex + 1) % questions_data.length;
         message = '';
         explanation = '';
-    }
-
-    if (req.body.submit === "Back") {
+    } else if (req.body.submit === "Back") {
         currentQuestionIndex = (currentQuestionIndex - 1 + questions_data.length) % questions_data.length;
         message = '';
         explanation = '';
