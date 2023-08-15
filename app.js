@@ -6,25 +6,32 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Read questions data from file
 let questions_data = [];
 fs.readFile('question-bank.json', 'utf8', (err, data) => {
     if (err) throw err;
     questions_data = JSON.parse(data);
 });
 
+let currentQuestionIndex = 0;
+
 app.get('/', (req, res) => {
-    res.render('quiz', { question: questions_data[0], message: '', explanation: '' });
+    res.render('quiz', { question: questions_data[currentQuestionIndex], message: '', explanation: '' });
 });
 
 app.post('/', (req, res) => {
     const selected_answer = req.body.answer;
-    const correct_answer = questions_data[0].answer;
+    const correct_answer = questions_data[currentQuestionIndex].answer;
     
     let message = selected_answer === correct_answer ? "Correct!" : "Incorrect!";
-    let explanation = questions_data[0].explanation;
+    let explanation = questions_data[currentQuestionIndex].explanation;
     
-    res.render('quiz', { question: questions_data[0], message: message, explanation: explanation });
+    if (req.body.submit === "Next") {
+        currentQuestionIndex = (currentQuestionIndex + 1) % questions_data.length;
+        message = '';
+        explanation = '';
+    }
+    
+    res.render('quiz', { question: questions_data[currentQuestionIndex], message: message, explanation: explanation });
 });
 
 const PORT = 3000;
