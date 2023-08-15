@@ -44,6 +44,7 @@
       "Properties": {
         "ImageId": { "Ref": "LatestAmiId" },
         "InstanceType": { "Ref": "InstanceType" },
+        "Tags": [{ "Key": "Name", "Value": "MyInstanceName" }],
         "KeyName": { "Ref": "KeyName" },
         "SecurityGroups": [{ "Ref": "WebServerSecurityGroup" }],
         "UserData": {
