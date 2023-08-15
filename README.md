@@ -1,6 +1,6 @@
 # GPT prompt
 
-Create a new practice exam with 20 questions for the AWS Certified DevOps Engineer - Professional certification. Questions should be challenging and densely worded, between 4-7 sentences. Answers should be multiple choice. Include a field that explains the correct answer and why the others are wrong. Output the question, answer, and explanation in JSON format.
+Create a new practice exam with 20 questions for the AWS Certified DevOps Engineer - Professional certification. Questions should be challenging and densely worded, between 4-7 sentences. Answers should be multiple choice. Include a field that explains the correct answer and why the others are wrong. Output only the question, choices, answer, and explanation in JSON format.
 
 # Installation steps
 ## From CloudFormation
