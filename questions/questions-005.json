@@ -1,0 +1,68 @@
+[
+    {
+        "question": "For a DevOps Engineer operating in a multifaceted AWS environment, ensuring consistent application deployments across various environments can be challenging. If you're aiming to model and provision AWS resources and entire AWS infrastructures using templates, which AWS service should be your prime choice?",
+        "choices": ["A. AWS CloudFormation", "B. AWS CodeStar", "C. AWS AppConfig", "D. AWS Elastic Beanstalk"],
+        "answer": "A. AWS CloudFormation",
+        "explanation": "AWS CloudFormation provides a common language for modeling and provisioning AWS resources in your cloud environment, allowing you to use templates to describe your AWS resources and any associated dependencies or runtime parameters."
+    },
+    {
+        "question": "In the context of AWS DevOps, having a consistent method to build and distribute container images is imperative. Which AWS service offers a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images?",
+        "choices": ["A. AWS App Runner", "B. Amazon ECR", "C. Amazon ECS", "D. AWS Fargate"],
+        "answer": "B. Amazon ECR",
+        "explanation": "Amazon Elastic Container Registry (ECR) is a fully managed Docker container registry that allows developers to store, manage, and deploy Docker container images securely."
+    },
+    {
+        "question": "In a large-scale AWS DevOps setup, centralizing the logging mechanism is essential for easier debugging and tracing. Which AWS service enables you to collect and monitor logs from all your systems, applications, and AWS services in one platform?",
+        "choices": ["A. AWS CloudTrail", "B. Amazon CloudWatch Logs", "C. AWS Config", "D. AWS X-Ray"],
+        "answer": "B. Amazon CloudWatch Logs",
+        "explanation": "Amazon CloudWatch Logs allows you to centralize the logs from all your systems, applications, and AWS services, providing monitoring and real-time analysis of the data."
+    },
+    {
+        "question": "For AWS DevOps professionals, managing infrastructure configurations in a consistent, repeatable manner is paramount. Which AWS service offers management of configuration files, helping teams maintain and apply customized configurations consistently across an environment?",
+        "choices": ["A. AWS OpsWorks", "B. AWS Systems Manager Parameter Store", "C. AWS Config", "D. AWS Elastic Beanstalk"],
+        "answer": "A. AWS OpsWorks",
+        "explanation": "AWS OpsWorks is a configuration management service that uses Chef and provides managed instances of Chef and Puppet. It allows you to define the application’s architecture and specification of each component, helping in managing configurations consistently."
+    },
+    {
+        "question": "In advanced AWS DevOps scenarios, having a reliable and secure artifact storage for application builds becomes crucial. Which AWS service offers a secure, scalable, and durable location to store and retrieve application artifacts?",
+        "choices": ["A. AWS Artifact", "B. AWS CodeStar", "C. AWS CodeArtifact", "D. Amazon ECR"],
+        "answer": "C. AWS CodeArtifact",
+        "explanation": "AWS CodeArtifact is a fully managed artifact repository service that allows organizations to securely store, publish, and share software packages used in their software development process."
+    },
+    {
+        "question": "To ensure a well-rounded AWS DevOps approach, identifying and responding to software vulnerabilities becomes essential. Which AWS service offers insights into application health, highlighting diagnostic information about individual instances or the application as a whole?",
+        "choices": ["A. AWS Shield", "B. AWS X-Ray", "C. Amazon Inspector", "D. Amazon CloudWatch"],
+        "answer": "B. AWS X-Ray",
+        "explanation": "AWS X-Ray provides insights into the behavior of your applications, helping understand how they are performing and where bottlenecks are occurring, making it pivotal for a comprehensive diagnostic solution."
+    },
+    {
+        "question": "For a DevOps Engineer operating in an expansive AWS environment, handling interruptions and ensuring the reliability of applications becomes pivotal. Which AWS service can be used to automate scaling for applications that have multiple resources behind a load balancer, such as EC2 instances or Lambda functions?",
+        "choices": ["A. AWS App Runner", "B. AWS Elastic Beanstalk", "C. AWS Auto Scaling", "D. AWS CloudFormation"],
+        "answer": "C. AWS Auto Scaling",
+        "explanation": "AWS Auto Scaling enables you to set target utilization levels for multiple resources in a single, intuitive interface. You can quickly see the average utilization of multiple Amazon EC2 instances and then adjust the desired capacity to maintain the average utilization at the chosen level."
+    },
+    {
+        "question": "In the sphere of AWS DevOps, it's crucial to maintain a reliable CI/CD pipeline. Which AWS service allows you to automate the build and test phases of your release process every time there's a code change?",
+        "choices": ["A. AWS CodePipeline", "B. AWS CodeCommit", "C. AWS CodeDeploy", "D. AWS CodeBuild"],
+        "answer": "D. AWS CodeBuild",
+        "explanation": "AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy. It integrates with other AWS services to automate the phases of your release process."
+    },
+    {
+        "question": "To ensure efficient AWS DevOps practices, monitoring the activities within your AWS account becomes crucial. Which AWS service provides visibility into user and resource activity by recording AWS management console actions and API calls?",
+        "choices": ["A. AWS CloudTrail", "B. AWS X-Ray", "C. AWS CloudWatch", "D. AWS Config"],
+        "answer": "A. AWS CloudTrail",
+        "explanation": "AWS CloudTrail is a service that provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command-line tools, and other AWS services. This history simplifies security analysis, resource change tracking, and troubleshooting."
+    },
+    {
+        "question": "In the context of AWS DevOps, automating the deployment of applications to servers and Lambda functions can be vital. Which AWS service aids in the automation of application deployments, minimizing downtime while maximizing application availability?",
+        "choices": ["A. AWS CodeCommit", "B. AWS OpsWorks", "C. AWS CodeDeploy", "D. AWS Elastic Beanstalk"],
+        "answer": "C. AWS CodeDeploy",
+        "explanation": "AWS CodeDeploy is a deployment service that automates application deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers, ensuring high availability."
+    },
+    {
+        "question": "For DevOps professionals focusing on AWS infrastructure, managing stateful applications can pose challenges. Which AWS service offers a fully-managed container orchestration service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes?",
+        "choices": ["A. AWS Fargate", "B. Amazon ECS", "C. Amazon EKS", "D. AWS App Mesh"],
+        "answer": "C. Amazon EKS",
+        "explanation": "Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service that provides a fully managed Kubernetes control plane, making it easier to run Kubernetes on AWS without needing to stand up or maintain your own Kubernetes control plane."
+    }
+]
