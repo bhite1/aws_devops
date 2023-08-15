@@ -9,22 +9,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let questions_data = [];
 let answeredCorrectly = [];
-let userAnswers = [];  // To store user's selected answers
+let userAnswers = [];
 let currentQuestionIndex = 0;
 let userScore = 0;
 
+// Helper function to shuffle an array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];  // swap elements
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
-// Read all files in the 'questions' directory
+// Read all files in the 'questions' directory and randomize questions and choices
 const questionsDir = path.join(__dirname, 'questions');
 fs.readdir(questionsDir, (err, files) => {
     if (err) throw err;
-    
+
     files.forEach(file => {
         if (path.extname(file) === '.json') {
             const filePath = path.join(questionsDir, file);
@@ -33,24 +34,14 @@ fs.readdir(questionsDir, (err, files) => {
             questions_data = questions_data.concat(parsedData);
         }
     });
-});
 
-// After reading all question files
-files.forEach(file => {
-    if (path.extname(file) === '.json') {
-        const filePath = path.join(questionsDir, file);
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const parsedData = JSON.parse(fileContent);
-        questions_data = questions_data.concat(parsedData);
-    }
-});
+    // Randomize the ordering of the questions
+    shuffleArray(questions_data);
 
-// Randomize the ordering of the questions
-shuffleArray(questions_data);
-
-// Randomize the ordering of the choices for each question
-questions_data.forEach(question => {
-    shuffleArray(question.choices);
+    // Randomize the ordering of the choices for each question
+    questions_data.forEach(question => {
+        shuffleArray(question.choices);
+    });
 });
 
 app.get('/', (req, res) => {
@@ -69,7 +60,6 @@ app.post('/', (req, res) => {
     const selected_answer = req.body.answer;
     const correct_answer = questions_data[currentQuestionIndex].answer;
 
-    // Store the user's answer
     userAnswers[currentQuestionIndex] = selected_answer;
 
     let message = '';
