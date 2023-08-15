@@ -1,15 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let questions_data = [];
-fs.readFile('question-bank.json', 'utf8', (err, data) => {
+let answeredCorrectly = [];
+let currentQuestionIndex = 0;
+let userScore = 0;
+
+const questionsDir = path.join(__dirname, 'questions');
+fs.readdir(questionsDir, (err, files) => {
     if (err) throw err;
-    questions_data = JSON.parse(data);
+    
+    files.forEach(file => {
+        if (path.extname(file) === '.json') {
+            const filePath = path.join(questionsDir, file);
+            const fileContent = fs.readFileSync(filePath, 'utf8');
+            const parsedData = JSON.parse(fileContent);
+            questions_data = questions_data.concat(parsedData);
+        }
+    });
 });
 
 let currentQuestionIndex = 0;
