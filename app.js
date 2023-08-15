@@ -85,6 +85,13 @@ app.post('/', (req, res) => {
         currentQuestionIndex = (currentQuestionIndex - 1 + questions_data.length) % questions_data.length;
         message = '';
         explanation = '';
+    } else if (req.body.submit === "Clear") {
+        currentQuestionIndex = 0;
+        userScore = 0;
+        answeredCorrectly = [];
+        userAnswers = [];
+        message = '';
+        explanation = '';
     }
 
     res.render('quiz', {
