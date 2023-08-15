@@ -8,6 +8,11 @@ sudo yum install -y nodejs git
 git clone https://github.com/bhite1/aws_devops.git
 cd aws_devops/
 npm install express ejs body-parser
+
+sudo npm install pm2 -g
+pm2 start app.js --name "awsdevopsquiz"
+pm2 startup
+pm2 save
 ```
 
 Now, to start your web app, simply run node app.js from your project directory in the terminal. Then, open a web browser and go to http://localhost:3000/ to start the quiz.
