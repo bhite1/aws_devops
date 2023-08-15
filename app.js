@@ -14,6 +14,7 @@ fs.readFile('question-bank.json', 'utf8', (err, data) => {
 
 let currentQuestionIndex = 0;
 let userScore = 0;
+let answeredCorrectly = [];
 
 app.get('/', (req, res) => {
     res.render('quiz', {
@@ -32,9 +33,14 @@ app.post('/', (req, res) => {
     const correct_answer = questions_data[currentQuestionIndex].answer;
 
     let message = '';
-    if (req.body.submit === "Submit Answer") {
-        message = selected_answer === correct_answer ? "Correct!" : "Incorrect!";
-        if (selected_answer === correct_answer) userScore += 1;
+
+    // Check if the answer is correct and hasn't been answered correctly before
+    if (req.body.submit === "Submit Answer" && selected_answer === correct_answer && !answeredCorrectly.includes(currentQuestionIndex)) {
+        message = "Correct!";
+        userScore += 1;
+        answeredCorrectly.push(currentQuestionIndex); // Mark this question as answered correctly
+    } else if (req.body.submit === "Submit Answer") {
+        message = "Incorrect!";
     }
 
     let explanation = req.body.submit === "Submit Answer" ? questions_data[currentQuestionIndex].explanation : '';
