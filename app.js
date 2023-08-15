@@ -1,13 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const questions_data = [
-    // ... [all your JSON data above]
-];
+// Read questions data from file
+let questions_data = [];
+fs.readFile('question-bank.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    questions_data = JSON.parse(data);
+});
 
 app.get('/', (req, res) => {
     res.render('quiz', { question: questions_data[0], message: '', explanation: '' });
