@@ -19,4 +19,4 @@ pm2 startup
 pm2 save
 ```
 
-Now, to start your web app, simply run node app.js from your project directory in the terminal. Then, open a web browser and go to http://<public-ip>:3000/ to start the quiz.
+Now, to start your web app, simply run node app.js from your project directory in the terminal. Then, open a web browser and go to http://\<public-ip\>:3000/ to start the quiz.
