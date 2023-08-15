@@ -12,6 +12,7 @@ let answeredCorrectly = [];
 let currentQuestionIndex = 0;
 let userScore = 0;
 
+// Read all files in the 'questions' directory
 const questionsDir = path.join(__dirname, 'questions');
 fs.readdir(questionsDir, (err, files) => {
     if (err) throw err;
@@ -25,10 +26,6 @@ fs.readdir(questionsDir, (err, files) => {
         }
     });
 });
-
-let currentQuestionIndex = 0;
-let userScore = 0;
-let answeredCorrectly = [];
 
 app.get('/', (req, res) => {
     res.render('quiz', {
