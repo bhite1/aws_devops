@@ -10,7 +10,8 @@
         <% for(let choice of question.choices) { %>
         <input type="radio" name="answer" value="<%= choice %>"><%= choice %><br>
         <% } %>
-        <input type="submit" value="Submit Answer">
+        <input type="submit" name="submit" value="Submit Answer">
+        <input type="submit" name="submit" value="Next">
     </form>
 
     <p><%= message %></p>
