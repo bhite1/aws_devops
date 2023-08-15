@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let questions_data = [];
 let answeredCorrectly = [];
+let userAnswers = [];  // To store user's selected answers
 let currentQuestionIndex = 0;
 let userScore = 0;
 
@@ -33,7 +34,7 @@ app.get('/', (req, res) => {
         questionNumber: currentQuestionIndex + 1,
         totalQuestions: questions_data.length,
         userScore: userScore,
-        selected_answer: "",
+        selected_answer: userAnswers[currentQuestionIndex] || "",
         message: '',
         explanation: ''
     });
@@ -43,14 +44,16 @@ app.post('/', (req, res) => {
     const selected_answer = req.body.answer;
     const correct_answer = questions_data[currentQuestionIndex].answer;
 
-    let message = '';
+    // Store the user's answer
+    userAnswers[currentQuestionIndex] = selected_answer;
 
+    let message = '';
     if (req.body.submit === "Submit Answer") {
         if (selected_answer === correct_answer) {
             message = "Correct!";
             if (!answeredCorrectly.includes(currentQuestionIndex)) {
                 userScore += 1;
-                answeredCorrectly.push(currentQuestionIndex); // Mark this question as answered correctly
+                answeredCorrectly.push(currentQuestionIndex);
             }
         } else {
             message = "Incorrect!";
@@ -74,7 +77,7 @@ app.post('/', (req, res) => {
         questionNumber: currentQuestionIndex + 1,
         totalQuestions: questions_data.length,
         userScore: userScore,
-        selected_answer: selected_answer,
+        selected_answer: userAnswers[currentQuestionIndex] || "",
         message: message,
         explanation: explanation
     });
