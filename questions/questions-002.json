@@ -1,0 +1,104 @@
+[
+    {
+        "question": "You're the chief architect for a company deploying on AWS and there's an imperative to maintain service continuity during deployment. Within the vast array of deployment strategies offered by AWS Elastic Beanstalk, which particular method ensures that a new version is deployed in parallel with the original, thereby ensuring that the original remains undisturbed until the new version is confirmed as stable?",
+        "choices": ["A. Rolling", "B. Blue/Green", "C. All at once", "D. Immutable"],
+        "answer": "B. Blue/Green",
+        "explanation": "Blue/Green deployment seamlessly deploys the new version alongside the old one. Following verification of the new version's stability, URLs are swapped. The other listed methods involve instance replacement, which could lead to potential downtime."
+    },
+    {
+        "question": "In your company's AWS CodePipeline setup, there's a requirement to perform a series of command executions on a host. This host, crucially, is under the management of AWS CodeBuild. Given this stipulation, which specific action type within CodePipeline would you leverage to facilitate this execution?",
+        "choices": ["A. Build", "B. Deploy", "C. Invoke", "D. Source"],
+        "answer": "A. Build",
+        "explanation": "The 'Build' action type in CodePipeline facilitates command execution on a host managed by AWS CodeBuild. The 'Source' is primarily for source code retrieval, 'Deploy' for deployment actions, and 'Invoke' for Lambda function invocations."
+    },
+    {
+        "question": "As part of the ongoing audit operations in your organization, AWS CloudTrail logs are being meticulously reviewed. During this review, you're tasked with pinpointing an event signifying the creation of an EC2 instance. Among the following choices, which specific API call would accurately reflect such an event?",
+        "choices": ["A. StartInstances", "B. RunInstances", "C. CreateInstance", "D. InitiateInstance"],
+        "answer": "B. RunInstances",
+        "explanation": "The 'RunInstances' API call in AWS represents the initiation and creation of an EC2 instance. The other choices aren't valid EC2 actions that correspond with instance creation."
+    },
+    {
+        "question": "For an AWS Lambda deployment in your organization, ensuring the latest code version is consistently deployed, especially when a new container boots up, is paramount. Within the realm of available environment variables in AWS Lambda, which specific one would be instrumental in addressing this requirement?",
+        "choices": ["A. LATEST_VERSION", "B. CODE_DEPLOY", "C. CONTAINER_VERSION", "D. LAMBDA_TASK_ROOT"],
+        "answer": "D. LAMBDA_TASK_ROOT",
+        "explanation": "The 'LAMBDA_TASK_ROOT' environment variable points to the directory containing the Lambda function code. Ensuring that deployments always reference the latest code means that new containers will access the freshest version from this directory."
+    },
+    {
+        "question": "Envisioning a scenario where there's a need to meticulously model, visualize, automate, and govern the deployment of applications with paramount security on AWS, which service from AWS's suite of offerings would you strategically choose to meet this need?",
+        "choices": ["A. AWS Config", "B. AWS CloudFormation", "C. AWS CloudTrail", "D. AWS Cloud Development Kit (CDK)"],
+        "answer": "B. AWS CloudFormation",
+        "explanation": "AWS CloudFormation offers a unified language, facilitating modeling and provisioning of AWS resources and third-party application resources. This ensures a consistent, automated, and secure application deployment process."
+    },
+    {
+        "question": "In your role as a cloud solutions architect, you are deploying a large-scale application on AWS. To maintain service continuity and avoid potential downtimes during deployment, you've been researching deployment strategies within AWS Elastic Beanstalk. Which specific deployment methodology would you choose, ensuring the new version is deployed side-by-side with the existing version, and without any interruptions until the new version has been fully vetted and deemed stable?",
+        "choices": ["A. Rolling", "B. Blue/Green", "C. All at once", "D. Immutable"],
+        "answer": "B. Blue/Green",
+        "explanation": "The Blue/Green deployment approach deploys the new version alongside the old, allowing for easy rollback and zero downtime during transitions. The other methods could potentially cause interruptions during the deployment phase."
+    },
+    {
+        "question": "You're architecting a continuous integration and continuous deployment (CI/CD) solution using AWS CodePipeline. One phase requires executing a series of commands on a host managed within the AWS CodeBuild environment. Given this critical stipulation, which action type should you configure within CodePipeline to ensure the commands execute on the desired host?",
+        "choices": ["A. Build", "B. Deploy", "C. Invoke", "D. Source"],
+        "answer": "A. Build",
+        "explanation": "The 'Build' action type in CodePipeline enables the execution of commands on a host managed by AWS CodeBuild. The other options serve different purposes within the pipeline."
+    },
+    {
+        "question": "Given your security responsibilities, you are diligently reviewing AWS CloudTrail logs to track and monitor AWS resource-related actions. In one of your audits, you aim to identify events that reflect the creation of EC2 instances. Which of the following API calls should you specifically look for in the logs to determine such instantiation events?",
+        "choices": ["A. StartInstances", "B. RunInstances", "C. CreateInstance", "D. InitiateInstance"],
+        "answer": "B. RunInstances",
+        "explanation": "The 'RunInstances' API call indicates the creation and initiation of an EC2 instance. The other choices do not directly correspond to the creation of an EC2 instance."
+    },
+    {
+        "question": "When deploying AWS Lambda functions, there's an inherent need in your organization to always utilize the latest version of the code, especially when Lambda provisions a new container instance. To adhere to this standard, which AWS Lambda environment variable would you leverage to ensure the most recent code version is accessed during the instantiation of a new container?",
+        "choices": ["A. LATEST_VERSION", "B. CODE_DEPLOY", "C. CONTAINER_VERSION", "D. LAMBDA_TASK_ROOT"],
+        "answer": "D. LAMBDA_TASK_ROOT",
+        "explanation": "The 'LAMBDA_TASK_ROOT' environment variable directs to the directory where the Lambda function code resides. Thus, accessing this path guarantees that the latest version of the code is executed."
+    },
+    {
+        "question": "With an increasing emphasis on robust application deployment automation, you've been exploring AWS services that can not only model but also visualize, automate, and oversee secure application deployments. In your evaluation, which AWS service emerges as the most potent tool to achieve these multifaceted goals of application deployment?",
+        "choices": ["A. AWS Config", "B. AWS CloudFormation", "C. AWS CloudTrail", "D. AWS Cloud Development Kit (CDK)"],
+        "answer": "B. AWS CloudFormation",
+        "explanation": "AWS CloudFormation facilitates a unified language to model, provision, and manage AWS resources and third-party application resources, ensuring a secure and automated application deployment mechanism."
+    },
+    {
+        "question": "In a world of burgeoning data security threats, your organization is looking towards AWS services for solutions to automate the discovery and classification of stored data. Given the AWS services available at your disposal, which specific one would you employ to automatically identify and classify data, especially for security and compliance monitoring?",
+        "choices": ["A. Amazon Macie", "B. AWS CloudTrail", "C. Amazon Athena", "D. AWS Shield"],
+        "answer": "A. Amazon Macie",
+        "explanation": "Amazon Macie uses machine learning to automatically discover, classify, and protect sensitive data in AWS. The other choices do not specifically serve this purpose."
+    },
+    {
+        "question": "Imagine being a developer in need of simulating the AWS environment on your local workstation for testing purposes. Among the vast AWS service portfolio, which tool would you primarily turn to, ensuring you can emulate the AWS ecosystem locally, allowing for offline building and testing of serverless applications?",
+        "choices": ["A. AWS SAM Local", "B. AWS CodeStar", "C. AWS OpsWorks", "D. AWS Cloud9"],
+        "answer": "A. AWS SAM Local",
+        "explanation": "AWS SAM (Serverless Application Model) Local is designed to allow developers to simulate an AWS environment on their local machine. This assists in offline development and testing of serverless applications."
+    },
+    {
+        "question": "The compliance team in your organization has expressed concerns about hardcoded secrets or passwords within AWS Lambda function code. With an objective to securely manage and retrieve such sensitive data without hardcoding, which AWS service would you recommend they integrate with for this purpose?",
+        "choices": ["A. AWS Secrets Manager", "B. AWS CodeDeploy", "C. AWS Key Management Service (KMS)", "D. AWS CodeStar"],
+        "answer": "A. AWS Secrets Manager",
+        "explanation": "AWS Secrets Manager facilitates the management of sensitive information, allowing for dynamic retrieval instead of hardcoding within applications."
+    },
+    {
+        "question": "When deploying an AWS ECS service leveraging the Fargate launch type, a certain division of responsibility exists between the user and AWS. In the context of this shared responsibility model, which particular task would squarely fall under the user's purview?",
+        "choices": ["A. Managing the EC2 instances", "B. Configuring the VPC", "C. Updating the ECS agent", "D. Patching the underlying servers"],
+        "answer": "B. Configuring the VPC",
+        "explanation": "In a Fargate launch type context, users don't have to manage EC2 instances, update agents, or patch servers. However, they are responsible for configuring their VPC settings."
+    },
+    {
+        "question": "Application monitoring and troubleshooting often require deep dives into logs and data streams to diagnose performance bottlenecks or failures. Out of the AWS services mentioned below, which one would you leverage to gain insights into your application's behavior, especially focusing on the intricate details of request traces and performance metrics?",
+        "choices": ["A. Amazon CloudFront", "B. AWS X-Ray", "C. AWS CloudTrail", "D. AWS Elastic Beanstalk"],
+        "answer": "B. AWS X-Ray",
+        "explanation": "AWS X-Ray offers in-depth insights into the behavior of applications, making it easier to understand performance bottlenecks and trace requests."
+    },
+    {
+        "question": "Ensuring high availability is paramount for any mission-critical application hosted on AWS EC2 instances. With a goal to minimize any single point of failure and ensure your application remains operational even if a subsection of AWS faces issues, your application should span across multiple:",
+        "choices": ["A. Regions", "B. VPCs", "C. Availability Zones", "D. S3 Buckets"],
+        "answer": "C. Availability Zones",
+        "explanation": "Availability Zones (AZs) are isolated locations within an AWS region that provide redundancy and fault tolerance for applications. Deploying across multiple AZs ensures high availability."
+    },
+    {
+        "question": "Modern IT operations require real-time reactions to a plethora of operational changes within the AWS ecosystem. In this ever-changing environment, which AWS service would you deem most appropriate for setting up a system that can detect and respond to such changes almost instantaneously?",
+        "choices": ["A. AWS Config", "B. AWS Lambda", "C. Amazon CloudWatch Events", "D. AWS CloudTrail"],
+        "answer": "C. Amazon CloudWatch Events",
+        "explanation": "Amazon CloudWatch Events provides a near real-time stream of system events, enabling swift reactions to operational changes by routing them to appropriate targets."
+    }
+]
