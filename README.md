@@ -7,7 +7,7 @@ Create a new practice exam with 20 questions for the AWS Certified DevOps Engine
 sudo yum install -y nodejs git
 git clone https://github.com/bhite1/aws_devops.git
 cd aws_devops/
-npm install express ejs
+npm install express ejs body-parser
 ```
 
 Now, to start your web app, simply run node app.js from your project directory in the terminal. Then, open a web browser and go to http://localhost:3000/ to start the quiz.
