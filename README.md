@@ -4,7 +4,8 @@ Create a new practice exam with 20 questions for the AWS Certified DevOps Engine
 
 # Installation steps
 ## From CloudFormation
-Use the provided `cloudformation-template.json` and wait for the EC2 instance to pass its status checks.
+1. Create an EC2 KeyPair from the Management Console. It won't be used but is needed for the stack to create.
+2. Use the provided `cloudformation-template.json` and wait for the EC2 instance to pass its status checks.
 
 ## From an EC2 Instance
 ```
