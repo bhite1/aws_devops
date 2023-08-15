@@ -46,10 +46,12 @@ app.post('/', (req, res) => {
     let message = '';
 
     if (req.body.submit === "Submit Answer") {
-        if (selected_answer === correct_answer && !answeredCorrectly.includes(currentQuestionIndex)) {
+        if (selected_answer === correct_answer) {
             message = "Correct!";
-            userScore += 1;
-            answeredCorrectly.push(currentQuestionIndex);
+            if (!answeredCorrectly.includes(currentQuestionIndex)) {
+                userScore += 1;
+                answeredCorrectly.push(currentQuestionIndex); // Mark this question as answered correctly
+            }
         } else {
             message = "Incorrect!";
         }
