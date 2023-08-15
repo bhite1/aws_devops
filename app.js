@@ -62,6 +62,12 @@ app.post('/', (req, res) => {
         explanation = '';
     }
 
+    if (req.body.submit === "Back") {
+        currentQuestionIndex = (currentQuestionIndex - 1 + questions_data.length) % questions_data.length;
+        message = '';
+        explanation = '';
+    }
+
     res.render('quiz', {
         question: questions_data[currentQuestionIndex],
         questionNumber: currentQuestionIndex + 1,
